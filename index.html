@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sistema de Inventario - Tienda de Ropa</title>
+    
+    <!-- Ruta corregida hacia la carpeta css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#121212">
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <header>
+            <h1>🛍️ MENU TIENDA DE ROPA</h1>
+            <p id="systemStatus" class="status-msg">La mejor ropa | Sistema de Gestión</p>
+        </header>
+
+        <div class="stats-panel">
+            <div class="stat-card">
+                <h3>Total Prendas</h3>
+                <p id="totalStock">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Dinero en Caja</h3>
+                <p id="totalMoney">$120.000</p>
+            </div>
+        </div>
+
+        <div class="actions-grid">
+            <div class="card">
+                <h2>1. Buscar / Vender Prenda</h2>
+                <div class="input-group">
+                    <input type="text" id="searchId" placeholder="Nombre o ID">
+                    <button id="searchBtn">Buscar</button>
+                </div>
+                <div id="searchResult" class="result-box"></div>
+            </div>
+
+            <div class="card">
+                <h2>2. Modificar Precio o Stock</h2>
+                <div class="input-group-vertical">
+                    <input type="text" id="modId" placeholder="ID de la prenda">
+                    <input type="number" id="modStock" placeholder="Nuevo Stock">
+                    <input type="number" id="modPrice" placeholder="Nuevo Precio">
+                    <button id="updateBtn">Actualizar Prenda</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card full-width">
+            <h2>3. Alerta de Stock Bajo (&lt; 5 unidades)</h2>
+            <div id="lowStockList" class="alert-list"></div>
+        </div>
+
+        <div class="card full-width">
+            <h2>4. Inventario General de Prendas</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>ID</th>
+                            <th>Prenda</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
